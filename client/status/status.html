@@ -1,0 +1,23 @@
+<template name="status">
+  {{checkInstalled}}
+  <h2>Status</h2>
+  {{#if has_status}}
+    {{> snapshot_create}}
+    {{#each status}}
+      <h3>{{type}}</h3>
+      <div class="ui inverted link list">
+        {{#each files}}
+        <a class="item"><i class="file icon"></i> {{path}}</a>
+        {{/each}}
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="ui inverted icon message">
+      <i class="green ok sign icon"></i>
+      <div class="content no-pointer">
+        <div class="header anti-alias">System is clean</div>
+        <p>No changes have been done since last snapshot</p>
+      </div>
+    </div>
+  {{/if}}
+</template>

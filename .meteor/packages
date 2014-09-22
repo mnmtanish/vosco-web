@@ -8,4 +8,9 @@ autopublish
 insecure
 coffeescript
 nooitaf:semantic-ui
+iron:router
+less
+meteorhacks:npm
 
+
+npm-container

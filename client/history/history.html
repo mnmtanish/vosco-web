@@ -1,0 +1,43 @@
+<template name="history">
+  {{checkInstalled}}
+  <h2>History</h2>
+  <table class="ui inverted table segment">
+    <thead>
+      <tr>
+        <th>Hash</th>
+        <th>Message</th>
+        <th>Date</th>
+        <th>Author Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each history}}
+      <tr>
+        <td>{{short_hash}}</td>
+        <td>{{message}}</td>
+        <td>{{date_string}}</td>
+        <td>{{author}}</td>
+        <td>
+          <div x-preview class="circular ui mini icon button">
+            <i class="icon search"></i>
+          </div>
+          <div x-rollback class="circular ui mini icon button">
+            <i class="icon refresh"></i>
+          </div>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div x-preview-modal class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Preview Commit
+    </div>
+    <div class="content">
+      <pre x-preview-content></pre>
+    </div>
+  </div>
+</template>

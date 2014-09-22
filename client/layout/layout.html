@@ -1,0 +1,23 @@
+<template name="layout">
+  <div id="top-menu" class="ui tiered menu">
+    <div class="menu">
+      <a href="/" class="item"><i class="time icon"></i>VOSCO</a>
+      <div class="right menu">
+        <a href="/settings" class="item"><i class="settings icon"></i></a>
+      </div>
+    </div>
+    <div class="ui sub menu">
+      {{> yield region='navigation'}}
+    </div>
+  </div>
+
+  <div id="page-content">
+    {{> yield}}
+  </div>
+
+  <div id="footer-menu" class="ui inverted menu">
+    <div class="menu">
+      {{> yield region='statusbar'}}
+    </div>
+  </div>
+</template>

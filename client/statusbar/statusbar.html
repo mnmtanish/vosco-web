@@ -1,0 +1,11 @@
+<template name="statusbar">
+  <a href="/status" class="item">
+    {{#if has_status}}
+      {{#each status}}
+        <i class="{{message_icon type}} icon"></i> {{count}}
+      {{/each}}
+    {{else}}
+      <i class="green ok sign icon"></i> <small>System is clean</small>
+    {{/if}}
+  </a>
+</template>
