@@ -1,0 +1,28 @@
+<template name="branches">
+  {{checkInstalled}}
+  <h2>Branches</h2>
+  {{> branch_create}}
+  <table class="ui inverted table segment">
+    <thead>
+      <tr>
+        <th>Branch</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each branches}}
+      <tr>
+        <td>{{this}}</td>
+        <td>
+          <div x-select class="ui circular mini icon toggle button {{#if isCurrent}}active{{/if}}">
+            <i class="fork code icon"></i>
+          </div>
+          <div x-delete class="ui circular red mini icon toggle button">
+            <i class="trash icon"></i>
+          </div>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
