@@ -1,7 +1,7 @@
 Future = Npm.require('fibers/future')
 VOSCO  = Meteor.npmRequire('vosco')
 
-repo_path = '/tmp/test_repo/'
+repo_path = process.env.VOSCO_ROOT_DIR or '/'
 repo_opts =
   author_name : 'Test User'
   author_email: 'user@localhost'
